@@ -5,7 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <meta name="description" content="Portfolio of Ahmed Amine Ouqlani, first-year engineering student at ENSEEIHT (Toulouse INP), specializing in Electrical Engineering, Energy and Automatic Control (3EA).">
+  <title>Ahmed Amine Ouqlani | Engineering Portfolio</title>
+  <link rel="canonical" href="https://amine-ouqlani.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ahmed Amine Ouqlani | Engineering Portfolio">
+  <meta property="og:description" content="First-year engineering student at ENSEEIHT, Toulouse INP (3EA). Projects, education and achievements.">
+  <meta property="og:url" content="https://amine-ouqlani.github.io/">
+  <meta property="og:image" content="https://amine-ouqlani.github.io/assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!--
     - favicon
@@ -23,6 +31,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    - text links: one accent color (the template's yellow), underlined, same before and after being visited
+  -->
+  <style>
+    .timeline-text a,
+    .timeline-text a:visited {
+      color: var(--orange-yellow-crayola, #ffdb70);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .timeline-text a:hover,
+    .timeline-text a:focus-visible {
+      color: var(--vegas-gold, #e6c25a);
+    }
+
+    /* group photos inside timeline entries */
+    .timeline-photo {
+      margin-top: 15px;
+    }
+
+    .timeline-photo img {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 14px;
+    }
+
+    /* full name: wrap onto two lines instead of being cut off */
+    aside.sidebar .sidebar-info .info-content .name {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      text-align: center;
+      line-height: 1.25;
+      overflow-wrap: break-word;
+    }
+    /* portfolio filters hidden while there are only a few projects.
+       To bring them back, delete the next rule. */
+    .filter-list,
+    .filter-select-box {
+      display: none !important;
+    }
+
+    /* contact buttons */
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .contact-actions .form-btn {
+      width: auto;
+      max-width: none;
+      margin: 0;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -42,13 +112,14 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <!-- TODO: replace ./assets/images/my-avatar.png with your own photograph (same filename, square image) -->
+          <img src="./assets/images/my-avatar.png" alt="Portrait of Ahmed Amine Ouqlani" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
+          <h1 class="name" title="Ahmed Amine Ouqlani">Ahmed Amine Ouqlani</h1>
 
-          <p class="title">Web developer</p>
+          <p class="title">Engineering Student | ENSEEIHT</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -72,9 +143,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <p class="contact-title">School email</p>
 
-              <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+              <a href="mailto:ahmed-amine.ouqlani@etu.inp-n7.fr" class="contact-link">ahmed-amine.ouqlani@etu.inp-n7.fr</a>
             </div>
 
           </li>
@@ -82,27 +153,13 @@
           <li class="contact-item">
 
             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
+              <p class="contact-title">Personal email</p>
 
-              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
+              <a href="mailto:amineouqlani3@gmail.com" class="contact-link">amineouqlani3@gmail.com</a>
             </div>
 
           </li>
@@ -116,7 +173,21 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Sacramento, California, USA</address>
+              <address>Toulouse, France</address>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">CV</p>
+
+              <a href="./assets/docs/Ahmed-Amine-Ouqlani-CV.pdf" class="contact-link" target="_blank" rel="noopener noreferrer">Download (PDF)</a>
             </div>
 
           </li>
@@ -128,20 +199,14 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="https://github.com/amine-ouqlani" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile of Ahmed Amine Ouqlani">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
+            <a href="https://www.linkedin.com/in/amine-ouqlani-6b0352358/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile of Ahmed Amine Ouqlani">
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
@@ -182,10 +247,6 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
 
@@ -209,17 +270,15 @@
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+            I am a first-year engineering student at ENSEEIHT (Toulouse INP), specializing in Electrical Engineering,
+            Energy and Automatic Control (3EA). My path began with the Moroccan scientific preparatory classes (CPGE),
+            where I studied mathematics and physics.
           </p>
 
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+            I am interested in programming, electronics, mathematics and automatic control, and I like applying
+            theory to concrete engineering problems. Alongside my studies, I build programming and electronics
+            projects and create LaTeX mathematics resources for CPGE students.
           </p>
         </section>
 
@@ -230,22 +289,21 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title">What I work on</h3>
 
           <ul class="service-list">
 
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/icon-dev.svg" alt="" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">Programming &amp; Software</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  C and Python, with a focus on structured problem-solving and clear, working code.
                 </p>
               </div>
 
@@ -254,46 +312,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-design.svg" alt="" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">Educational Books</h4>
 
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
-                <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-
-                <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  I write revision books that are easy to understand, mainly for CPGE students.
                 </p>
               </div>
 
@@ -303,204 +329,6 @@
 
         </section>
 
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
 
       </article>
 
@@ -532,41 +360,38 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
+              <h4 class="h4 timeline-item-title">ENSEEIHT, Toulouse INP</h4>
 
-              <span>2007 — 2008</span>
+              <span>2026 — Present</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                First-year engineering student, specializing in Electrical Engineering, Energy and Automatic Control
+                (3EA).
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
+              <h4 class="h4 timeline-item-title">CPGE MPSI, then MP</h4>
 
-              <span>2006 — 2007</span>
+              <span>2024 — 2026</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                Preparatory classes in mathematics and physics, Rabat, Morocco: Lycée Moulay Youssef (MPSI), then
+                Lycée Zahrawi (MP).
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
+              <h4 class="h4 timeline-item-title">Baccalauréat, Mathematical Sciences A</h4>
 
-              <span>2002 — 2004</span>
+              <span>2023 — 2024</span>
 
               <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
+                Groupe Scolaire Atlas, Rabat, Morocco. Graduated with the "Très Bien" distinction (18.25/20).
               </p>
 
             </li>
@@ -575,6 +400,30 @@
 
         </section>
 
+        <!-- Civic Engagement: hidden until there is content. Remove the comment markers to show it.
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Civic Engagement</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <p class="timeline-text">In progress</p>
+
+            </li>
+
+          </ol>
+
+        </section>
+        -->
+
         <section class="timeline">
 
           <div class="title-wrapper">
@@ -582,49 +431,87 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Experience</h3>
+            <h3 class="h3">Projects &amp; Achievements</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Creative director</h4>
+              <h4 class="h4 timeline-item-title">iMSA Challenge Winner — IA for Impact Hackathon 2026</h4>
 
-              <span>2015 — Present</span>
+              <span>October 2026 · La Mêlée, Toulouse INP – ENSEEIHT</span>
 
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                Team project iMSA Sentinel, a tool that helps check health invoices by comparing the scanned form with
+                the electronic invoice and flagging discrepancies with their evidence. Built with Python, FastAPI and
+                React, with image reading (OCR) and fully local processing.
+                <br>
+                <a href="https://github.com/nneilime/Hackaton-IA4Impact/tree/main/submissions/groupe-13" target="_blank" rel="noopener noreferrer">View the team submission on GitHub</a>
+              </p>
+
+              <!-- Team photo: save your image as assets/images/hackathon-group.jpg (it stays hidden until the file exists) -->
+              <figure class="timeline-photo">
+                <img src="./assets/images/hackathon-group.jpg" alt="Our team at the IA for Impact hackathon, La Mêlée, Toulouse" loading="lazy" onerror="this.closest('figure').style.display='none'">
+              </figure>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">MMC2026 — Mathematics Event, Morocco</h4>
+
+              <span>2026 · Organized by Maths Maroc</span>
+
+              <p class="timeline-text">
+                Took part in MMC2026, a major mathematics event in Morocco organized by Maths Maroc, after passing a
+                selection test.
+              </p>
+
+              <!-- Group photo: save your image as assets/images/mmc2026-group.jpg (it stays hidden until the file exists) -->
+              <figure class="timeline-photo">
+                <img src="./assets/images/mmc2026-group.jpg" alt="Group photo at MMC2026, organized by Maths Maroc" loading="lazy" onerror="this.closest('figure').style.display='none'">
+              </figure>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">TIPE: Drone Attitude Stabilization</h4>
+
+              <span>Automatic control · Arduino · Sensors</span>
+
+              <p class="timeline-text">
+                Design and comparison of several control architectures for stabilizing the attitude of a drone, with
+                Arduino, sensors and gyroscope measurements.
+                <br>
+                <a href="./assets/docs/tipe.pdf" target="_blank" rel="noopener noreferrer">Read the TIPE presentation (PDF, in French)</a>
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Art director</h4>
+              <h4 class="h4 timeline-item-title">Le Collé: CPGE Revision Books</h4>
 
-              <span>2013 — 2015</span>
+              <span>LaTeX · Five books</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Author of five revision books for CPGE students (chemistry, first- and second-year mathematics,
+                computer science, and a mathematics summary), written in LaTeX and available online.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web designer</h4>
+              <h4 class="h4 timeline-item-title">Academic Results</h4>
 
-              <span>2010 — 2013</span>
+              <span>2024 — 2026</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Ranked 92nd out of 3,096 in the Concours National Commun (Morocco), 2026. First physics prize at the
+                Groupe Scolaire Atlas open-day contests, 2024.
               </p>
 
             </li>
@@ -635,60 +522,70 @@
 
         <section class="skill">
 
-          <h3 class="h3 skills-title">My skills</h3>
+          <h3 class="h3 skills-title">Skills</h3>
 
           <ul class="skills-list content-card">
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
+                <h5 class="h5">C programming</h5>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
+                <h5 class="h5">Python</h5>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
+                <h5 class="h5">LaTeX and technical documentation</h5>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
+                <h5 class="h5">Git and GitHub (basics)</h5>
               </div>
+            </li>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
+          </ul>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Languages</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">French</h5>
+                <data value="C1">DALF C1</data>
               </div>
+            </li>
 
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Arabic</h5>
+                <data value="native">Native</data>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">English</h5>
+                <data value="C1">C1</data>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">German</h5>
+                <data value="beginner">Beginner</data>
+              </div>
             </li>
 
           </ul>
@@ -720,15 +617,15 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>Programming</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn>Control &amp; embedded systems</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>Education</button>
             </li>
 
           </ul>
@@ -752,15 +649,15 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item>Programming</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item>Control &amp; embedded systems</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>Education</button>
               </li>
 
             </ul>
@@ -769,356 +666,131 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <!-- TODO: replace the href of each card with the project's own repository URL when it exists.
+                 Until then, cards link to the GitHub profile. Delete any card you cannot document honestly. -->
+
+            <li class="project-item  active" data-filter-item data-category="programming">
+              <a href="https://github.com/nneilime/Hackaton-IA4Impact/tree/main/submissions/groupe-13" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/project-imsa-sentinel.png" alt="Screenshot of iMSA Sentinel, the health invoice checking tool built at the IA for Impact hackathon" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">iMSA Sentinel (Hackathon)</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Programming</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="control &amp; embedded systems">
+              <a href="./assets/docs/tipe.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                  <img src="./assets/images/project-tipe-drone.png" alt="Title slide of the TIPE presentation on improved drone control" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">TIPE: Drone Attitude Stabilization</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Control &amp; embedded systems</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="education">
+              <a href="./assets/docs/le-colle-chimie.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/project-colle-chimie.png" alt="Cover of Le Collé Chimie, a CPGE chemistry revision book" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title">Le Collé Chimie</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Education</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="education">
+              <a href="./assets/docs/le-colle-mathsup.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/project-colle-mathsup.png" alt="Cover of Le Collé Mathsup, a first-year CPGE mathematics revision book" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title">Le Collé Mathsup</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category">Education</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="education">
+              <a href="./assets/docs/le-colle-mathspe.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                  <img src="./assets/images/project-colle-mathspe.png" alt="Cover of Le Collé Mathspé, a second-year CPGE mathematics revision book" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">DSM.</h3>
+                <h3 class="project-title">Le Collé Mathspé</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Education</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="education">
+              <a href="./assets/docs/le-colle-info.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                  <img src="./assets/images/project-colle-info.png" alt="Cover of Le Collé Info, a CPGE computer science revision book" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">MetaSpark</h3>
+                <h3 class="project-title">Le Collé Info</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Education</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item  active" data-filter-item data-category="education">
+              <a href="./assets/docs/le-colle-maths-resume.pdf" target="_blank" rel="noopener noreferrer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                  <img src="./assets/images/project-colle-maths-resume.png" alt="Cover of Le Collé Maths – Résumé, a CPGE mathematics summary" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Summary</h3>
+                <h3 class="project-title">Le Collé Maths – Résumé</h3>
 
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
+                <p class="project-category">Education</p>
 
               </a>
             </li>
@@ -1143,34 +815,50 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
         <section class="contact-form">
 
-          <h3 class="h3 form-title">Contact Form</h3>
+          <h3 class="h3 form-title">Get in touch</h3>
 
-          <form action="#" class="form" data-form>
+          <p class="timeline-text">
+            The quickest way to reach me is by email.<br>
+            School: ahmed-amine.ouqlani@etu.inp-n7.fr<br>
+            Personal: amineouqlani3@gmail.com
+          </p>
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+          <div class="contact-actions">
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+            <a class="form-btn" href="mailto:ahmed-amine.ouqlani@etu.inp-n7.fr">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>School email</span>
+            </a>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <a class="form-btn" href="mailto:amineouqlani3@gmail.com">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>Personal email</span>
+            </a>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+            <a class="form-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amineouqlani3%40gmail.com" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-google"></ion-icon>
+              <span>Write in Gmail</span>
+            </a>
 
-          </form>
+            <a class="form-btn" href="https://www.linkedin.com/in/amine-ouqlani-6b0352358/" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <span>LinkedIn</span>
+            </a>
+
+            <a class="form-btn" href="https://github.com/amine-ouqlani" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-github"></ion-icon>
+              <span>GitHub</span>
+            </a>
+
+            <!-- The CV file must be saved as assets/docs/Ahmed-Amine-Ouqlani-CV.pdf -->
+            <a class="form-btn" href="./assets/docs/Ahmed-Amine-Ouqlani-CV.pdf" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="document-text-outline"></ion-icon>
+              <span>Download CV</span>
+            </a>
+
+          </div>
 
         </section>
 
@@ -1189,6 +877,28 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+
+  <!--
+    - email links: also copy the address, so something visibly happens even when the computer has no mail app
+  -->
+  <script>
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var address = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+        var label = link.querySelector('span') || link;
+        var original = label.textContent;
+
+        function confirmCopy() {
+          label.textContent = 'Address copied';
+          setTimeout(function () { label.textContent = original; }, 1800);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(address).then(confirmCopy).catch(function () { });
+        }
+      });
+    });
+  </script>
 
   <!--
     - ionicon link
