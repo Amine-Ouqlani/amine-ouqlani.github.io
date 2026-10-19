@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Ahmed Amine Ouqlani, first-year engineering student at ENSEEIHT (Toulouse INP), specializing in Electrical Engineering, Energy and Automatic Control (3EA).">
-  <title>Ahmed Amine Ouqlani | Engineering Portfolio</title>
+  <meta name="description" content="ePortfolio of Ahmed Amine Ouqlani, first-year engineering student at ENSEEIHT (Toulouse INP), specializing in Electrical Engineering, Energy and Automatic Control (3EA).">
+  <title>Ahmed Amine Ouqlani | Engineering ePortfolio</title>
   <link rel="canonical" href="https://amine-ouqlani.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ahmed Amine Ouqlani | Engineering Portfolio">
-  <meta property="og:description" content="First-year engineering student at ENSEEIHT, Toulouse INP (3EA). Projects, education and achievements.">
+  <meta property="og:title" content="Ahmed Amine Ouqlani | Engineering ePortfolio">
+  <meta property="og:description" content="First-year engineering student at ENSEEIHT, Toulouse INP (3EA). Projects, civic engagement, mobility, career project, sports and interests.">
   <meta property="og:url" content="https://amine-ouqlani.github.io/">
   <meta property="og:image" content="https://amine-ouqlani.github.io/assets/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -91,6 +91,396 @@
       max-width: none;
       margin: 0;
       text-decoration: none;
+    }
+
+    /* ===== 6-tab navigation =====
+       Short labels on phones, full labels on larger screens. */
+    .navbar-link .label-short { display: none; }
+
+    @media (max-width: 579px) {
+      .navbar-list {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 0 6px;
+      }
+      .navbar-link {
+        padding: 18px 4px;
+        font-size: 11px;
+        white-space: nowrap;
+      }
+      .navbar-link .label-full { display: none; }
+      .navbar-link .label-short { display: inline; }
+    }
+
+    @media (min-width: 580px) and (max-width: 767px) {
+      .navbar-list { gap: 8px; }
+      .navbar-link { --fs-8: 13px; padding: 20px 4px; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .navbar-list { gap: 14px; }
+    }
+
+    /* desktop: the bar no longer fits beside the page title, so it sits
+       as a full-width bar above the page instead of in the corner */
+    @media (min-width: 1024px) {
+      .navbar {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 0 10px;
+        border-radius: 20px;
+        background: var(--eerie-black-2);
+        border: 1px solid var(--jet);
+        box-shadow: var(--shadow-1);
+      }
+      .navbar-list {
+        gap: 26px;
+        padding: 0 10px;
+        flex-wrap: wrap;
+      }
+      .navbar-link { padding: 18px 2px; }
+    }
+
+    /* section spacing inside the new tabs */
+    .tab-section { margin-bottom: 30px; }
+    .tab-section:last-child { margin-bottom: 0; }
+
+    .tab-intro {
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-300);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      color: var(--white-2);
+      font-size: var(--fs-2);
+      font-weight: var(--fw-500);
+      margin-bottom: 15px;
+    }
+
+    /* ===== elevator pitch video ===== */
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--eerie-black-1);
+      border: 1px solid var(--jet);
+      box-shadow: var(--shadow-2);
+    }
+
+    .video-frame video,
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #000;
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      text-align: center;
+      color: var(--light-gray-70);
+      font-size: var(--fs-6);
+      border: 2px dashed hsla(45, 100%, 72%, 0.35);
+      border-radius: 16px;
+    }
+
+    .video-placeholder ion-icon {
+      font-size: 42px;
+      color: var(--orange-yellow-crayola);
+    }
+
+    .video-placeholder strong {
+      color: var(--white-2);
+      font-weight: var(--fw-500);
+      font-size: var(--fs-4);
+    }
+
+    .video-frame.is-empty .video-placeholder { display: flex; }
+    .video-frame.is-empty video { display: none; }
+
+    .video-caption {
+      margin-top: 12px;
+      color: var(--light-gray-70);
+      font-size: var(--fs-7);
+      line-height: 1.6;
+    }
+
+    /* ===== cards for role models, mobility projects, civic engagement, sports ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+    }
+
+    .card-grid--wide { grid-template-columns: 1fr; }
+
+    .info-card {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-2);
+      z-index: 1;
+    }
+
+    .info-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+    .info-card .card-kicker {
+      display: inline-block;
+      color: var(--orange-yellow-crayola);
+      font-size: var(--fs-8);
+      font-weight: var(--fw-500);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .info-card h4 {
+      color: var(--white-2);
+      font-size: var(--fs-4);
+      font-weight: var(--fw-500);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .info-card dl { display: grid; gap: 8px; }
+
+    .info-card dt {
+      color: var(--light-gray-70);
+      font-size: var(--fs-8);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .info-card dd {
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-300);
+      line-height: 1.5;
+    }
+
+    /* anything still to be written: dashed yellow outline + "To complete" tag,
+       so it is easy to spot before submitting. Remove class="placeholder" once filled in. */
+    .placeholder {
+      outline: 1px dashed hsla(45, 100%, 72%, 0.45);
+      outline-offset: -1px;
+    }
+
+    .timeline-item.placeholder {
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+
+    .placeholder dd,
+    .placeholder .timeline-text,
+    .placeholder h4 {
+      color: var(--light-gray-70);
+      font-style: italic;
+    }
+
+    .todo-tag {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: hsla(45, 100%, 72%, 0.12);
+      color: var(--orange-yellow-crayola);
+      font-size: 10px;
+      font-style: normal;
+      font-weight: var(--fw-500);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    /* interests chips */
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip-list li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--onyx);
+      border: 1px solid var(--jet);
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+    }
+
+    /* highlights row on Welcome */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .highlights { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .highlight {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      border-radius: 14px;
+      padding: 16px 14px;
+      box-shadow: var(--shadow-2);
+      z-index: 1;
+    }
+
+    .highlight::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+    .highlight-value {
+      display: block;
+      font-size: 22px;
+      font-weight: var(--fw-600);
+      line-height: 1.2;
+      background: var(--text-gradient-yellow);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 579px) {
+      .highlight-value { font-size: 18px; white-space: nowrap; }
+    }
+
+    .highlight-label {
+      display: block;
+      color: var(--light-gray-70);
+      font-size: var(--fs-7);
+      line-height: 1.45;
+    }
+
+    /* "What I work on": three cards side by side on wide screens */
+    @media (min-width: 1250px) {
+      .service-list { grid-template-columns: repeat(3, 1fr) !important; }
+      .service-item { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* project gallery: every image the same landscape shape */
+    .project-img { height: auto !important; aspect-ratio: 16 / 10; }
+
+    /* cards keep their own height instead of stretching to the tallest one */
+    .card-grid { align-items: start; }
+
+    /* PDF links under a timeline entry */
+    .doc-links { margin-top: 6px; }
+    .doc-links a { display: inline; }
+
+    /* Le Collé books window */
+    .books-dialog {
+      width: min(920px, calc(100% - 32px));
+      max-height: calc(100% - 48px);
+      margin: auto;
+      padding: 24px;
+      border: 1px solid var(--jet);
+      border-radius: 20px;
+      background: var(--eerie-black-2);
+      color: var(--light-gray);
+      box-shadow: var(--shadow-5);
+      overflow-y: auto;
+    }
+
+    .books-dialog::backdrop {
+      background: hsla(0, 0%, 0%, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .books-dialog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .books-dialog-head .h3 { color: var(--white-2); margin-bottom: 4px; }
+
+    .books-dialog-head p {
+      color: var(--light-gray-70);
+      font-size: var(--fs-6);
+    }
+
+    .books-dialog-close {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--onyx);
+      color: var(--white-2);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .books-dialog-close:hover { color: var(--orange-yellow-crayola); }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 18px;
+    }
+
+    .books-grid a {
+      display: block;
+      color: var(--light-gray);
+      font-size: var(--fs-7);
+      text-align: center;
+    }
+
+    .books-grid img {
+      width: 100%;
+      aspect-ratio: 910 / 1287;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow-2);
+      transition: transform var(--transition-1);
+    }
+
+    .books-grid a:hover img { transform: translateY(-4px); }
+    .books-grid a:hover span { color: var(--orange-yellow-crayola); }
+
+    /* buttons whose file is not uploaded yet */
+    .form-btn.is-pending {
+      opacity: 0.55;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -178,19 +568,6 @@
 
           </li>
 
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="document-text-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">CV</p>
-
-              <a href="./assets/docs/Ahmed-Amine-Ouqlani-CV.pdf" class="contact-link" target="_blank" rel="noopener noreferrer">Download (PDF)</a>
-            </div>
-
-          </li>
 
         </ul>
 
@@ -227,7 +604,9 @@
     <div class="main-content">
 
       <!--
-        - #NAVBAR
+        - #NAVBAR — 6 tabs. data-nav-target must match the data-page of an <article>.
+          Each tab can also be opened directly with a link: index.html#welcome, #courses,
+          #civic, #mobility, #careers, #interests
       -->
 
       <nav class="navbar">
@@ -235,19 +614,39 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link data-nav-target="welcome">
+              <span class="label-full">Welcome</span><span class="label-short">Welcome</span>
+            </button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-nav-target="courses">
+              <span class="label-full">Engineering Courses</span><span class="label-short">Courses</span>
+            </button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link data-nav-target="civic">
+              <span class="label-full">Civic Engagement</span><span class="label-short">Civic</span>
+            </button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link data-nav-target="mobility">
+              <span class="label-full">Mobility</span><span class="label-short">Mobility</span>
+            </button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-nav-target="careers">
+              <span class="label-full">Careers</span><span class="label-short">Careers</span>
+            </button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-nav-target="interests">
+              <span class="label-full">Sports &amp; Interests</span><span class="label-short">Sports</span>
+            </button>
           </li>
 
         </ul>
@@ -259,13 +658,15 @@
 
 
       <!--
-        - #ABOUT
+        ======================================================
+        - TAB 1 — #WELCOME
+        ======================================================
       -->
 
-      <article class="about  active" data-page="about">
+      <article class="about  active" data-page="welcome">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title">Welcome</h2>
         </header>
 
         <section class="about-text">
@@ -280,7 +681,35 @@
             theory to concrete engineering problems. Alongside my studies, I build programming and electronics
             projects and create LaTeX mathematics resources for CPGE students.
           </p>
+
+          <!-- DRAFT written from your role model notes: reword it so it says exactly what you want -->
+          <p>
+            Looking ahead, I want to build my career in electrical energy and control systems, in fields such as
+            aerospace embedded systems or power networks. I am using my first year to explore these paths by
+            talking with engineers, so that I can choose my third-year specialization, an internship or a
+            work-study programme, and possibly a thesis, with a clear goal in mind.
+          </p>
         </section>
+
+        <!-- Highlights: key results, shown first -->
+        <ul class="highlights">
+          <li class="highlight">
+            <span class="highlight-value">92nd / 3,096</span>
+            <span class="highlight-label">Concours National Commun (Morocco), 2026</span>
+          </li>
+          <li class="highlight">
+            <span class="highlight-value">Winner</span>
+            <span class="highlight-label">iMSA Challenge, IA for Impact Hackathon 2026</span>
+          </li>
+          <li class="highlight">
+            <span class="highlight-value">5 books</span>
+            <span class="highlight-label">Free CPGE revision books, written in LaTeX</span>
+          </li>
+          <li class="highlight">
+            <span class="highlight-value">18.25 / 20</span>
+            <span class="highlight-label">Baccalauréat, "Très Bien" distinction</span>
+          </li>
+        </ul>
 
 
         <!--
@@ -325,26 +754,27 @@
 
             </li>
 
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-control.svg" alt="" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Control &amp; Embedded Systems</h4>
+
+                <p class="service-item-text">
+                  Automatic control and embedded electronics, from my 3EA track and my TIPE on drone attitude
+                  stabilization with Arduino and sensors.
+                </p>
+              </div>
+
+            </li>
+
           </ul>
 
         </section>
 
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
 
         <section class="timeline">
 
@@ -400,29 +830,99 @@
 
         </section>
 
-        <!-- Civic Engagement: hidden until there is content. Remove the comment markers to show it.
+
         <section class="timeline">
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="people-outline"></ion-icon>
+              <ion-icon name="trophy-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Civic Engagement</h3>
+            <h3 class="h3">Achievements</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <p class="timeline-text">In progress</p>
+              <h4 class="h4 timeline-item-title">Academic Results</h4>
+
+              <span>2024 — 2026</span>
+
+              <p class="timeline-text">
+                Ranked 92nd out of 3,096 in the Concours National Commun (Morocco), 2026. First physics prize at the
+                Groupe Scolaire Atlas open-day contests, 2024.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">MMC2026 — Mathematics Event, Morocco</h4>
+
+              <span>2026 · Organized by Maths Maroc</span>
+
+              <p class="timeline-text">
+                Took part in MMC2026, a major mathematics event in Morocco organized by Maths Maroc, after passing a
+                selection test.
+              </p>
+
+              <!-- Group photo: save your image as assets/images/mmc2026-group.jpg (it stays hidden until the file exists) -->
+              <figure class="timeline-photo">
+                <img src="./assets/images/mmc2026-group.jpg" alt="Group photo at MMC2026, organized by Maths Maroc" loading="lazy" onerror="this.closest('figure').style.display='none'">
+              </figure>
 
             </li>
 
           </ol>
 
         </section>
-        -->
+
+
+        <!-- Contact (was its own tab before; now at the bottom of Welcome) -->
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Get in touch</h3>
+
+          <p class="timeline-text">
+            The quickest way to reach me is by email.
+          </p>
+
+          <div class="contact-actions">
+
+            <a class="form-btn" href="mailto:ahmed-amine.ouqlani@etu.inp-n7.fr">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>School email</span>
+            </a>
+
+            <a class="form-btn" href="mailto:amineouqlani3@gmail.com">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>Personal email</span>
+            </a>
+
+          </div>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        ======================================================
+        - TAB 2 — #ENGINEERING COURSES (PROJECTS)
+        ======================================================
+      -->
+
+      <article class="portfolio" data-page="courses">
+
+        <header>
+          <h2 class="h2 article-title">Engineering Courses &amp; Projects</h2>
+        </header>
+
+
 
         <section class="timeline">
 
@@ -459,24 +959,6 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">MMC2026 — Mathematics Event, Morocco</h4>
-
-              <span>2026 · Organized by Maths Maroc</span>
-
-              <p class="timeline-text">
-                Took part in MMC2026, a major mathematics event in Morocco organized by Maths Maroc, after passing a
-                selection test.
-              </p>
-
-              <!-- Group photo: save your image as assets/images/mmc2026-group.jpg (it stays hidden until the file exists) -->
-              <figure class="timeline-photo">
-                <img src="./assets/images/mmc2026-group.jpg" alt="Group photo at MMC2026, organized by Maths Maroc" loading="lazy" onerror="this.closest('figure').style.display='none'">
-              </figure>
-
-            </li>
-
-            <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">TIPE: Drone Attitude Stabilization</h4>
 
               <span>Automatic control · Arduino · Sensors</span>
@@ -490,7 +972,7 @@
 
             </li>
 
-            <li class="timeline-item">
+            <li class="timeline-item" id="le-colle">
 
               <h4 class="h4 timeline-item-title">Le Collé: CPGE Revision Books</h4>
 
@@ -501,17 +983,25 @@
                 computer science, and a mathematics summary), written in LaTeX and available online.
               </p>
 
+              <p class="timeline-text doc-links">
+                Read the books (PDF): <a href="./assets/docs/le-colle-chimie.pdf" target="_blank" rel="noopener noreferrer">Chimie</a> ·
+                <a href="./assets/docs/le-colle-mathsup.pdf" target="_blank" rel="noopener noreferrer">Mathsup</a> ·
+                <a href="./assets/docs/le-colle-mathspe.pdf" target="_blank" rel="noopener noreferrer">Mathspé</a> ·
+                <a href="./assets/docs/le-colle-info.pdf" target="_blank" rel="noopener noreferrer">Info</a> ·
+                <a href="./assets/docs/le-colle-maths-resume.pdf" target="_blank" rel="noopener noreferrer">Maths – Résumé</a>
+              </p>
+
             </li>
 
-            <li class="timeline-item">
+            <!-- ENSEEIHT course project: copy this <li>, fill it in, and delete class="placeholder" -->
+            <li class="timeline-item placeholder">
 
-              <h4 class="h4 timeline-item-title">Academic Results</h4>
+              <h4 class="h4 timeline-item-title">ENSEEIHT course project <span class="todo-tag">To complete</span></h4>
 
-              <span>2024 — 2026</span>
+              <span>2026 — 2027 · Course name</span>
 
               <p class="timeline-text">
-                Ranked 92nd out of 3,096 in the Concours National Commun (Morocco), 2026. First physics prize at the
-                Groupe Scolaire Atlas open-day contests, 2024.
+                Project done in an ENSEEIHT 3EA course: goal, what you built or measured, tools used, and the result.
               </p>
 
             </li>
@@ -520,95 +1010,9 @@
 
         </section>
 
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">C programming</h5>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Python</h5>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">LaTeX and technical documentation</h5>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Git and GitHub (basics)</h5>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Languages</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">French</h5>
-                <data value="C1">Bilingual (DALF C1)</data>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Arabic</h5>
-                <data value="native">Native</data>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">English</h5>
-                <data value="C1">C1</data>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">German</h5>
-                <data value="beginner">Beginner</data>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
         <section class="projects">
+
+          <h3 class="h3 skills-title">Project Gallery</h3>
 
           <ul class="filter-list">
 
@@ -695,7 +1099,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-tipe-drone.png" alt="Title slide of the TIPE presentation on improved drone control" loading="lazy">
+                  <img src="./assets/images/project-tipe-diagram.jpg" alt="Diagram from the TIPE: forces acting on a tilted drone, showing why attitude control is needed for stability" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">TIPE: Drone Attitude Stabilization</h3>
@@ -705,94 +1109,64 @@
               </a>
             </li>
 
+            <!-- The 5 Le Collé books shown as one card. Clicking it opens a window with the 5 covers
+                 (the <dialog id="colle-dialog"> at the end of the page); each cover opens its PDF. -->
             <li class="project-item  active" data-filter-item data-category="education">
-              <a href="./assets/docs/le-colle-chimie.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="#le-colle" data-open-dialog="colle-dialog">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-colle-chimie.png" alt="Cover of Le Collé Chimie, a CPGE chemistry revision book" loading="lazy">
+                  <img src="./assets/images/project-colle-series.jpg" alt="Covers of the five Le Collé revision books: Chimie, Mathsup, Mathspé, Info and Maths – Résumé" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Le Collé Chimie</h3>
+                <h3 class="project-title">Le Collé: series of 5 revision books</h3>
 
                 <p class="project-category">Education</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="education">
-              <a href="./assets/docs/le-colle-mathsup.pdf" target="_blank" rel="noopener noreferrer">
+          </ul>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+        </section>
 
-                  <img src="./assets/images/project-colle-mathsup.png" alt="Cover of Le Collé Mathsup, a first-year CPGE mathematics revision book" loading="lazy">
-                </figure>
+        <section class="skill">
 
-                <h3 class="project-title">Le Collé Mathsup</h3>
+          <h3 class="h3 skills-title">Skills</h3>
 
-                <p class="project-category">Education</p>
+          <ul class="skills-list content-card">
 
-              </a>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">C programming</h5>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="education">
-              <a href="./assets/docs/le-colle-mathspe.pdf" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-colle-mathspe.png" alt="Cover of Le Collé Mathspé, a second-year CPGE mathematics revision book" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Le Collé Mathspé</h3>
-
-                <p class="project-category">Education</p>
-
-              </a>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="education">
-              <a href="./assets/docs/le-colle-info.pdf" target="_blank" rel="noopener noreferrer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-colle-info.png" alt="Cover of Le Collé Info, a CPGE computer science revision book" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Le Collé Info</h3>
-
-                <p class="project-category">Education</p>
-
-              </a>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">LaTeX and technical documentation</h5>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="education">
-              <a href="./assets/docs/le-colle-maths-resume.pdf" target="_blank" rel="noopener noreferrer">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Git and GitHub (basics)</h5>
+              </div>
+            </li>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-colle-maths-resume.png" alt="Cover of Le Collé Maths – Résumé, a CPGE mathematics summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Le Collé Maths – Résumé</h3>
-
-                <p class="project-category">Education</p>
-
-              </a>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Arduino and sensors</h5>
+              </div>
             </li>
 
           </ul>
@@ -806,40 +1180,258 @@
 
 
       <!--
-        - #CONTACT
+        ======================================================
+        - TAB 3 — #CIVIC ENGAGEMENT
+        ======================================================
       -->
 
-      <article class="contact" data-page="contact">
+      <article class="resume" data-page="civic">
 
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+          <h2 class="h2 article-title">Civic Engagement</h2>
         </header>
 
-        <section class="contact-form">
+        <section class="timeline">
 
-          <h3 class="h3 form-title">Get in touch</h3>
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
 
-          <p class="timeline-text">
-            The quickest way to reach me is by email.<br>
-            School: ahmed-amine.ouqlani@etu.inp-n7.fr<br>
-            Personal: amineouqlani3@gmail.com
+            <h3 class="h3">Engagements</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Le Collé: free revision books for CPGE students</h4>
+
+              <span>Author · Free to download on GitHub</span>
+
+              <p class="timeline-text">
+                I wrote five revision books for CPGE students (chemistry, first- and second-year mathematics,
+                computer science, and a mathematics summary) and share them for free on GitHub, so that any student
+                can use them to prepare for the competitive exams, whatever their means.
+              </p>
+
+              <p class="timeline-text doc-links">
+                Read the books (PDF): <a href="./assets/docs/le-colle-chimie.pdf" target="_blank" rel="noopener noreferrer">Chimie</a> ·
+                <a href="./assets/docs/le-colle-mathsup.pdf" target="_blank" rel="noopener noreferrer">Mathsup</a> ·
+                <a href="./assets/docs/le-colle-mathspe.pdf" target="_blank" rel="noopener noreferrer">Mathspé</a> ·
+                <a href="./assets/docs/le-colle-info.pdf" target="_blank" rel="noopener noreferrer">Info</a> ·
+                <a href="./assets/docs/le-colle-maths-resume.pdf" target="_blank" rel="noopener noreferrer">Maths – Résumé</a>
+              </p>
+
+            </li>
+
+            <!-- Copy this <li> for each other engagement (association, volunteering, student club, tutoring...),
+                 fill it in, and delete class="placeholder" -->
+            <li class="timeline-item placeholder">
+
+              <h4 class="h4 timeline-item-title">Organization / association <span class="todo-tag">To complete</span></h4>
+
+              <span>Dates · Your role</span>
+
+              <p class="timeline-text">
+                What the organization does, what you did there, and what it taught you.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        ======================================================
+        - TAB 4 — #MOBILITY
+          3 potential international mobility projects, each aligned with one of
+          the 3 role models in the Careers tab.
+        ======================================================
+      -->
+
+      <article class="resume" data-page="mobility">
+
+        <header>
+          <h2 class="h2 article-title">Mobility</h2>
+        </header>
+
+        <section class="tab-section">
+
+          <h3 class="section-heading">My international mobility projects</h3>
+
+          <ul class="card-grid">
+
+            <!-- Fill in each card, then delete class="placeholder" and the "To complete" tag -->
+            <li class="info-card placeholder">
+              <span class="card-kicker">Project 1 · linked to role model 1</span>
+              <h4>Destination: city, country <span class="todo-tag">To complete</span></h4>
+              <dl>
+                <dt>Host</dt>
+                <dd>University, lab or company</dd>
+                <dt>Type</dt>
+                <dd>Exchange semester, double degree, internship or gap year</dd>
+                <dt>When</dt>
+                <dd>Year of study / period</dd>
+                <dt>Why it fits</dt>
+                <dd>How it matches role model 1's path and my career goal</dd>
+              </dl>
+            </li>
+
+            <li class="info-card placeholder">
+              <span class="card-kicker">Project 2 · linked to role model 2</span>
+              <h4>Destination: city, country <span class="todo-tag">To complete</span></h4>
+              <dl>
+                <dt>Host</dt>
+                <dd>University, lab or company</dd>
+                <dt>Type</dt>
+                <dd>Exchange semester, double degree, internship or gap year</dd>
+                <dt>When</dt>
+                <dd>Year of study / period</dd>
+                <dt>Why it fits</dt>
+                <dd>How it matches role model 2's path and my career goal</dd>
+              </dl>
+            </li>
+
+            <li class="info-card placeholder">
+              <span class="card-kicker">Project 3 · linked to role model 3</span>
+              <h4>Destination: city, country <span class="todo-tag">To complete</span></h4>
+              <dl>
+                <dt>Host</dt>
+                <dd>University, lab or company</dd>
+                <dt>Type</dt>
+                <dd>Exchange semester, double degree, internship or gap year</dd>
+                <dt>When</dt>
+                <dd>Year of study / period</dd>
+                <dt>Why it fits</dt>
+                <dd>How it matches role model 3's path and my career goal</dd>
+              </dl>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Languages</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">French</h5>
+                <data value="C1">Fluent (DALF C1)</data>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Arabic</h5>
+                <data value="native">Native</data>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">English</h5>
+                <data value="C1">C1</data>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">German</h5>
+                <data value="beginner">Beginner</data>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        ======================================================
+        - TAB 5 — #CAREERS (career project)
+          Elevator pitch video, CVs (EN + FR), LinkedIn (EN + FR), 3 role models.
+        ======================================================
+      -->
+
+      <article class="resume" data-page="careers">
+
+        <header>
+          <h2 class="h2 article-title">Careers</h2>
+        </header>
+
+        <!-- ===== Elevator pitch video ===== -->
+        <section class="tab-section">
+
+          <h3 class="section-heading">Elevator pitch</h3>
+
+          <!--
+            HOW TO ADD YOUR VIDEO
+
+            Option A (recommended): upload the video to YouTube as "Unlisted", copy its link
+              (e.g. https://youtu.be/AbC123xyz or https://www.youtube.com/watch?v=AbC123xyz)
+              and paste it between the quotes of data-youtube-url="" on the next line. Nothing else to change.
+
+            Option B: save the video file as  assets/videos/elevator-pitch.mp4  (leave data-youtube-url empty).
+              GitHub refuses files over 100 MB (25 MB when uploading through the website),
+              so compress it first if needed.
+          -->
+          <div class="video-frame" data-video-frame data-youtube-url="">
+
+            <video controls preload="metadata" playsinline
+                   src="./assets/videos/elevator-pitch.mp4"
+                   onerror="this.closest('[data-video-frame]').classList.add('is-empty')">
+            </video>
+
+            <div class="video-placeholder">
+              <ion-icon name="videocam-outline"></ion-icon>
+              <strong>Elevator pitch video coming soon</strong>
+              <span>2–3 minute Unique Value Proposition, in English</span>
+            </div>
+
+          </div>
+
+          <p class="video-caption">
+            Unique Value Proposition, in English: who I am today, a brief look at my path, and where I am heading.
           </p>
+
+        </section>
+
+
+        <!-- ===== CVs and LinkedIn ===== -->
+        <section class="tab-section">
+
+          <h3 class="section-heading">CV &amp; LinkedIn</h3>
 
           <div class="contact-actions">
 
-            <a class="form-btn" href="mailto:ahmed-amine.ouqlani@etu.inp-n7.fr">
-              <ion-icon name="mail-outline"></ion-icon>
-              <span>School email</span>
+            <!-- Existing CV (written in French) -->
+            <a class="form-btn" href="./assets/docs/Ahmed-Amine-Ouqlani-CV.pdf" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="document-text-outline"></ion-icon>
+              <span>CV (French)</span>
             </a>
 
-            <a class="form-btn" href="mailto:amineouqlani3@gmail.com">
-              <ion-icon name="mail-outline"></ion-icon>
-              <span>Personal email</span>
-            </a>
-
-            <a class="form-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amineouqlani3%40gmail.com" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="logo-google"></ion-icon>
-              <span>Write in Gmail</span>
+            <!-- English CV: save it as assets/docs/Ahmed-Amine-Ouqlani-CV-EN.pdf.
+                 The button stays greyed out until the file is online. -->
+            <a class="form-btn" href="./assets/docs/Ahmed-Amine-Ouqlani-CV-EN.pdf" target="_blank" rel="noopener noreferrer" data-optional-file>
+              <ion-icon name="document-text-outline"></ion-icon>
+              <span>CV (English)</span>
             </a>
 
             <a class="form-btn" href="https://www.linkedin.com/in/amine-ouqlani-6b0352358/" target="_blank" rel="noopener noreferrer">
@@ -847,18 +1439,211 @@
               <span>LinkedIn</span>
             </a>
 
-            <a class="form-btn" href="https://github.com/amine-ouqlani" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="logo-github"></ion-icon>
-              <span>GitHub</span>
+            <!-- LinkedIn in the second language: once you add a secondary-language profile on LinkedIn
+                 ("Add profile in another language"), remove the comment markers around this button
+                 and check that the link opens the French version.
+            <a class="form-btn" href="https://www.linkedin.com/in/amine-ouqlani-6b0352358/?locale=fr_FR" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <span>LinkedIn (French)</span>
             </a>
-
-            <!-- The CV file must be saved as assets/docs/Ahmed-Amine-Ouqlani-CV.pdf -->
-            <a class="form-btn" href="./assets/docs/Ahmed-Amine-Ouqlani-CV.pdf" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="document-text-outline"></ion-icon>
-              <span>Download CV</span>
-            </a>
+            -->
 
           </div>
+
+        </section>
+
+
+        <!-- ===== 3 role models ===== -->
+        <section class="tab-section">
+
+          <h3 class="section-heading">Role models</h3>
+
+          <ul class="card-grid card-grid--wide">
+
+            <li class="info-card">
+              <span class="card-kicker">Role model 1 · My Job Glasses</span>
+              <h4>Pascal — Embedded Systems Engineer &amp; Architect, Airbus (retired)</h4>
+              <dl>
+                <dt>Company</dt>
+                <dd>Airbus, aeronautics and space industry, Toulouse, France</dd>
+                <dt>Path</dt>
+                <dd>
+                  ENSEEIHT engineering degree (1981), then a doctor-engineer degree at INP Toulouse (1983), with a
+                  thesis at LAAS and time at UCLA. Whole career at Airbus in embedded systems design: took part in
+                  designing the A320 fly-by-wire flight controls, worked on the safety, architecture and certification
+                  of embedded systems and on the A380 final assembly line, and moved through team management, project
+                  management, expert and architect roles. Last role before retiring in 2023: helping define and apply
+                  Airbus's innovation strategy for autonomy technologies.
+                </dd>
+                <dt>Met through</dt>
+                <dd>My Job Glasses</dd>
+                <dt>What I gained</dt>
+                <dd>
+                  He showed me how much a PhD can bring to an engineering career, and explained the difference between
+                  a CIFRE thesis, carried out with a company, and an academic thesis. His long and varied career really
+                  opened my mind about the working world, and his work at Airbus is exactly the kind of field that
+                  interests me.
+                </dd>
+              </dl>
+            </li>
+
+            <li class="info-card">
+              <span class="card-kicker">Role model 2 · My Job Glasses</span>
+              <h4>Mathilde Thenaisie — Digital Electronics Engineer (FPGA), Astek</h4>
+              <dl>
+                <dt>Company</dt>
+                <dd>Astek, engineering consulting, Rennes, France</dd>
+                <dt>Path</dt>
+                <dd>
+                  Scientific baccalauréat (2016), DUT in Physical Measurements at IUT de Rouen (2018), then ENSEEIHT in
+                  the same 3EA track as me (2021), completed as a work-study apprentice at EREMS. She then worked as an
+                  FPGA developer in the space sector at EREMS, as an FPGA and SoC engineer on defence projects at
+                  ARELIS, and is now a consultant in FPGA physical verification at Astek.
+                </dd>
+                <dt>Met through</dt>
+                <dd>My Job Glasses</dd>
+                <dt>What I gained</dt>
+                <dd>
+                  She explained how a work-study programme (alternance) works and gave me a lot of advice on how to
+                  make the most of my engineering studies starting now. Hearing about her current job, which I found
+                  very interesting, gave me ideas for choosing my third-year specialization.
+                </dd>
+              </dl>
+            </li>
+
+            <li class="info-card">
+              <span class="card-kicker">Role model 3 · LinkedIn</span>
+              <h4>Maxime Careil — Deputy Head of Intervention Agency, Enedis</h4>
+              <dl>
+                <dt>Company</dt>
+                <dd>Enedis, electricity distribution network, Charleville-Mézières, France</dd>
+                <dt>Path</dt>
+                <dd>
+                  Engineering degree from École Polytechnique (physics, mechanics and energy transition, GPA 3.87/4)
+                  and a double degree at ENSEEIHT in the 3EA track (energy conversion and power grids). Student
+                  projects and internships with SCLE (smart grids and railway networks), Airbus (modelling an aircraft
+                  synchronous-motor drive in Matlab/Simulink) and SKF (robust control with MPC and reinforcement
+                  learning). He then spent 10 months teaching science, English and computing to more than 1,000
+                  pupils in South India through a Service Civique with Objectif France Inde, before joining Enedis.
+                  He also volunteered as a mentor with AFEV.
+                </dd>
+                <dt>Met through</dt>
+                <dd>LinkedIn</dd>
+                <dt>What I gained</dt>
+                <dd>
+                  His academic path is excellent, and his job is one I would like to have in the future. He encouraged
+                  me to volunteer and to get involved in things outside my professional path. I want to be able to
+                  follow the same kind of path he did.
+                </dd>
+              </dl>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        ======================================================
+        - TAB 6 — #SPORTS & INTERESTS
+        ======================================================
+      -->
+
+      <article class="resume" data-page="interests">
+
+        <header>
+          <h2 class="h2 article-title">Sports &amp; Interests</h2>
+        </header>
+
+        <section class="tab-section">
+
+          <h3 class="section-heading">Interests</h3>
+
+          <ul class="chip-list">
+            <li>Programming</li>
+            <li>Electronics</li>
+            <li>Mathematics</li>
+            <li>Automatic control</li>
+            <li>Writing revision books (LaTeX)</li>
+          </ul>
+
+        </section>
+
+        <section class="tab-section">
+
+          <h3 class="section-heading">Sports</h3>
+
+          <ul class="card-grid">
+
+            <li class="info-card">
+              <span class="card-kicker">Sport</span>
+              <h4>Football</h4>
+              <dl>
+                <dt>How often</dt>
+                <dd>Every week, with friends</dd>
+                <dt>What it brings me</dt>
+                <dd>
+                  Fun, and a good way to do sport while enjoying myself and getting together with friends, in a
+                  place full of joy, away from the stress of the world.
+                </dd>
+              </dl>
+            </li>
+
+            <li class="info-card">
+              <span class="card-kicker">Sport</span>
+              <h4>Swimming</h4>
+              <dl>
+                <dt>How often</dt>
+                <dd>The sport I chose for my first semester</dd>
+              </dl>
+            </li>
+
+            <li class="info-card">
+              <span class="card-kicker">Sport</span>
+              <h4>Basketball</h4>
+              <dl>
+                <dt>How often</dt>
+                <dd>From time to time</dd>
+              </dl>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section class="tab-section">
+
+          <h3 class="section-heading">Hobbies</h3>
+
+          <ul class="card-grid">
+
+            <li class="info-card">
+              <span class="card-kicker">Hobby</span>
+              <h4>Writing books &amp; small projects</h4>
+              <dl>
+                <dt>About it</dt>
+                <dd>
+                  I like working on my books and on small projects that leave a trace of me out there and can help
+                  others.
+                </dd>
+              </dl>
+            </li>
+
+            <li class="info-card">
+              <span class="card-kicker">Hobby</span>
+              <h4>Baking</h4>
+              <dl>
+                <dt>About it</dt>
+                <dd>I enjoy baking in my free time.</dd>
+              </dl>
+            </li>
+
+          </ul>
 
         </section>
 
@@ -897,6 +1682,112 @@
           navigator.clipboard.writeText(address).then(confirmCopy).catch(function () { });
         }
       });
+    });
+  </script>
+
+  <!--
+    - Le Collé books window (opened by the Le Collé card in the Project Gallery)
+  -->
+  <dialog class="books-dialog" id="colle-dialog" aria-labelledby="colle-dialog-title">
+
+    <div class="books-dialog-head">
+      <div>
+        <h3 class="h3" id="colle-dialog-title">Le Collé</h3>
+        <p>5 free revision books for CPGE students. Click a cover to open the PDF.</p>
+      </div>
+      <button class="books-dialog-close" type="button" data-close-dialog aria-label="Close">
+        <span aria-hidden="true">✕</span>
+      </button>
+    </div>
+
+    <ul class="books-grid">
+      <li>
+        <a href="./assets/docs/le-colle-chimie.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/images/project-colle-chimie.png" alt="Cover of Le Collé Chimie" loading="lazy">
+          <span>Le Collé Chimie</span>
+        </a>
+      </li>
+      <li>
+        <a href="./assets/docs/le-colle-mathsup.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/images/project-colle-mathsup.png" alt="Cover of Le Collé Mathsup" loading="lazy">
+          <span>Le Collé Mathsup</span>
+        </a>
+      </li>
+      <li>
+        <a href="./assets/docs/le-colle-mathspe.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/images/project-colle-mathspe.png" alt="Cover of Le Collé Mathspé" loading="lazy">
+          <span>Le Collé Mathspé</span>
+        </a>
+      </li>
+      <li>
+        <a href="./assets/docs/le-colle-info.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/images/project-colle-info.png" alt="Cover of Le Collé Info" loading="lazy">
+          <span>Le Collé Info</span>
+        </a>
+      </li>
+      <li>
+        <a href="./assets/docs/le-colle-maths-resume.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/images/project-colle-maths-resume.png" alt="Cover of Le Collé Maths – Résumé" loading="lazy">
+          <span>Le Collé Maths – Résumé</span>
+        </a>
+      </li>
+    </ul>
+
+  </dialog>
+
+  <script>
+    document.querySelectorAll('[data-open-dialog]').forEach(function (link) {
+      var dialog = document.getElementById(link.getAttribute('data-open-dialog'));
+      if (!dialog || typeof dialog.showModal !== 'function') return; // old browsers: the link just scrolls to the Le Collé entry
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        dialog.showModal();
+      });
+      dialog.querySelectorAll('[data-close-dialog]').forEach(function (btn) {
+        btn.addEventListener('click', function () { dialog.close(); });
+      });
+      // clicking the dark area around the window closes it
+      dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+  </script>
+
+  <!--
+    - elevator pitch: if a YouTube link is set in data-youtube-url, show it instead of the local video file
+  -->
+  <script>
+    document.querySelectorAll('[data-video-frame]').forEach(function (frame) {
+      var url = (frame.getAttribute('data-youtube-url') || '').trim();
+      if (!url) return;
+      var match = url.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([A-Za-z0-9_-]{11})/);
+      if (!match) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + match[1] + '?rel=0';
+      iframe.title = 'Elevator pitch of Ahmed Amine Ouqlani';
+      iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.loading = 'lazy';
+      frame.innerHTML = '';
+      frame.classList.remove('is-empty');
+      frame.appendChild(iframe);
+    });
+  </script>
+
+  <!--
+    - optional files (e.g. the English CV): grey the button out until the file is online
+  -->
+  <script>
+    document.querySelectorAll('[data-optional-file]').forEach(function (link) {
+      if (!window.fetch || location.protocol === 'file:') return;
+      fetch(link.getAttribute('href'), { method: 'HEAD' }).then(function (res) {
+        if (!res.ok) {
+          link.classList.add('is-pending');
+          link.setAttribute('aria-disabled', 'true');
+          var label = link.querySelector('span');
+          if (label) label.textContent += ' · coming soon';
+        }
+      }).catch(function () { });
     });
   </script>
 

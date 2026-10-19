@@ -80,20 +80,50 @@ for (let i = 0; i < filterBtn.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+// show one tab: each nav button names its page in data-nav-target,
+// which must match the data-page attribute of an <article>
+const showPage = function (target, updateHash) {
+
+  // ignore anything that is not a tab name (e.g. #le-colle), so no tab gets hidden by mistake
+  let found = false;
+
+  for (let i = 0; i < pages.length; i++) {
+    if (pages[i].dataset.page === target) found = true;
+  }
+
+  if (!found) return false;
+
+  for (let i = 0; i < pages.length; i++) {
+    pages[i].classList.toggle("active", pages[i].dataset.page === target);
+  }
+
+  for (let i = 0; i < navigationLinks.length; i++) {
+    navigationLinks[i].classList.toggle("active", navigationLinks[i].dataset.navTarget === target);
+  }
+
+  window.scrollTo(0, 0);
+
+  // keep the tab in the address bar, so a link like index.html#careers opens that tab
+  if (updateHash && history.replaceState) {
+    history.replaceState(null, "", "#" + target);
+  }
+
+  return true;
+
+}
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
+    showPage(this.dataset.navTarget, true);
   });
 }
+
+// open the tab named in the address bar (index.html#mobility, ...)
+const openFromHash = function () {
+  const target = decodeURIComponent(window.location.hash.replace("#", ""));
+  if (target) showPage(target, false);
+}
+
+openFromHash();
+window.addEventListener("hashchange", openFromHash);

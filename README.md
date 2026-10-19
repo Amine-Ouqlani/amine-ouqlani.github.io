@@ -6,7 +6,9 @@ Live site: https://amine-ouqlani.github.io
 
 ## Structure
 
-- `index.html` — the whole site (About, Resume, Portfolio, Contact)
+- `index.html` — the whole site, in 6 tabs: Welcome, Engineering Courses (projects), Civic Engagement, Mobility, Careers, Sports & Interests. Each tab can be linked directly: `#welcome`, `#courses`, `#civic`, `#mobility`, `#careers`, `#interests`
+- Parts still to write are outlined in dashed yellow with a "To complete" tag (`class="placeholder"` in the HTML)
+- `assets/videos/elevator-pitch.mp4` — the elevator pitch video shown in the Careers tab (or embed a YouTube video instead; see the comment in `index.html`)
 - `assets/css/style.css`, `assets/js/script.js` — styles and behaviour
 - `assets/images/` — photos and project images
 - `assets/docs/` — PDFs linked from the site (TIPE presentation, revision books, CV)
