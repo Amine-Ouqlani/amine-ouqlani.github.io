@@ -333,59 +333,6 @@
       font-size: var(--fs-6);
     }
 
-    /* highlights row on Welcome */
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 30px;
-    }
-
-    @media (min-width: 768px) {
-      .highlights { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .highlight {
-      position: relative;
-      background: var(--border-gradient-onyx);
-      border-radius: 14px;
-      padding: 16px 14px;
-      box-shadow: var(--shadow-2);
-      z-index: 1;
-    }
-
-    .highlight::before {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      background: var(--bg-gradient-jet);
-      border-radius: inherit;
-      z-index: -1;
-    }
-
-    .highlight-value {
-      display: block;
-      font-size: 22px;
-      font-weight: var(--fw-600);
-      line-height: 1.2;
-      background: var(--text-gradient-yellow);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 6px;
-    }
-
-    @media (max-width: 579px) {
-      .highlight-value { font-size: 18px; white-space: nowrap; }
-    }
-
-    .highlight-label {
-      display: block;
-      color: var(--light-gray-70);
-      font-size: var(--fs-7);
-      line-height: 1.45;
-    }
-
     /* "What I work on": three cards side by side on wide screens */
     @media (min-width: 1250px) {
       .service-list { grid-template-columns: repeat(3, 1fr) !important; }
@@ -477,11 +424,81 @@
     .books-grid a:hover img { transform: translateY(-4px); }
     .books-grid a:hover span { color: var(--orange-yellow-crayola); }
 
+    /* ===== language switch (sidebar) ===== */
+    article > header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .lang-switch {
+      display: flex;
+      flex-shrink: 0;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background: var(--onyx);
+      border: 1px solid var(--jet);
+      color: var(--light-gray-70);
+      font-size: 12px;
+      font-weight: var(--fw-500);
+      cursor: pointer;
+      transition: border-color var(--transition-1), color var(--transition-1);
+    }
+
+    .lang-btn svg {
+      display: block;
+      width: 22px;
+      height: 15px;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+    }
+
+    .lang-btn span { display: inline; }
+
+    .lang-btn:hover { color: var(--white-2); }
+
+    .lang-btn.active {
+      border-color: var(--orange-yellow-crayola);
+      color: var(--orange-yellow-crayola);
+    }
+
+    /* full tab names only fit on desktop: short ones below 1024px */
+    @media (max-width: 1023px) {
+      .navbar-link .label-full { display: none; }
+      .navbar-link .label-short { display: inline; }
+    }
+
+    /* French titles: no capital letter on every word */
+    html[lang="fr"] .h2,
+    html[lang="fr"] .h3,
+    html[lang="fr"] .h4,
+    html[lang="fr"] .h5,
+    html[lang="fr"] .project-title,
+    html[lang="fr"] .form-btn { text-transform: none; }
+
+    /* "Address copied" message after clicking an email link */
+    a.copied { font-size: 0 !important; }
+    a.copied > * { display: none !important; }
+    a.copied::after { content: "Address copied"; font-size: 14px; }
+    html[lang="fr"] a.copied::after { content: "Adresse copiée"; }
+
     /* buttons whose file is not uploaded yet */
     .form-btn.is-pending {
       opacity: 0.55;
       pointer-events: none;
     }
+
+    .form-btn.is-pending span::after { content: " · coming soon"; }
+    html[lang="fr"] .form-btn.is-pending span::after { content: " · bientôt disponible"; }
   </style>
 </head>
 
@@ -667,6 +684,18 @@
 
         <header>
           <h2 class="h2 article-title">Welcome</h2>
+              <!-- Language switch (translations are in assets/js/i18n.js).
+                   It is copied automatically to the top right of every tab. -->
+              <div class="lang-switch" role="group" aria-label="Language" data-no-translate>
+                <button class="lang-btn" type="button" data-set-lang="fr" title="Afficher le site en français" aria-label="Afficher le site en français">
+                  <svg viewBox="0 0 3 2" aria-hidden="true" focusable="false"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>
+                  <span>FR</span>
+                </button>
+                <button class="lang-btn active" type="button" data-set-lang="en" title="Show the site in English" aria-label="Show the site in English">
+                  <svg viewBox="0 0 190 100" aria-hidden="true" focusable="false"><rect width="190" height="100" fill="#fff"/><rect y="0.000" width="190" height="7.692" fill="#B22234"/><rect y="15.385" width="190" height="7.692" fill="#B22234"/><rect y="30.769" width="190" height="7.692" fill="#B22234"/><rect y="46.154" width="190" height="7.692" fill="#B22234"/><rect y="61.538" width="190" height="7.692" fill="#B22234"/><rect y="76.923" width="190" height="7.692" fill="#B22234"/><rect y="92.308" width="190" height="7.692" fill="#B22234"/><rect width="76" height="53.85" fill="#3C3B6E"/><g fill="#fff"><circle cx="6.3" cy="5.4" r="1.9"/><circle cx="19.0" cy="5.4" r="1.9"/><circle cx="31.7" cy="5.4" r="1.9"/><circle cx="44.3" cy="5.4" r="1.9"/><circle cx="57.0" cy="5.4" r="1.9"/><circle cx="69.7" cy="5.4" r="1.9"/><circle cx="12.7" cy="10.8" r="1.9"/><circle cx="25.3" cy="10.8" r="1.9"/><circle cx="38.0" cy="10.8" r="1.9"/><circle cx="50.7" cy="10.8" r="1.9"/><circle cx="63.3" cy="10.8" r="1.9"/><circle cx="6.3" cy="16.2" r="1.9"/><circle cx="19.0" cy="16.2" r="1.9"/><circle cx="31.7" cy="16.2" r="1.9"/><circle cx="44.3" cy="16.2" r="1.9"/><circle cx="57.0" cy="16.2" r="1.9"/><circle cx="69.7" cy="16.2" r="1.9"/><circle cx="12.7" cy="21.5" r="1.9"/><circle cx="25.3" cy="21.5" r="1.9"/><circle cx="38.0" cy="21.5" r="1.9"/><circle cx="50.7" cy="21.5" r="1.9"/><circle cx="63.3" cy="21.5" r="1.9"/><circle cx="6.3" cy="26.9" r="1.9"/><circle cx="19.0" cy="26.9" r="1.9"/><circle cx="31.7" cy="26.9" r="1.9"/><circle cx="44.3" cy="26.9" r="1.9"/><circle cx="57.0" cy="26.9" r="1.9"/><circle cx="69.7" cy="26.9" r="1.9"/><circle cx="12.7" cy="32.3" r="1.9"/><circle cx="25.3" cy="32.3" r="1.9"/><circle cx="38.0" cy="32.3" r="1.9"/><circle cx="50.7" cy="32.3" r="1.9"/><circle cx="63.3" cy="32.3" r="1.9"/><circle cx="6.3" cy="37.7" r="1.9"/><circle cx="19.0" cy="37.7" r="1.9"/><circle cx="31.7" cy="37.7" r="1.9"/><circle cx="44.3" cy="37.7" r="1.9"/><circle cx="57.0" cy="37.7" r="1.9"/><circle cx="69.7" cy="37.7" r="1.9"/><circle cx="12.7" cy="43.1" r="1.9"/><circle cx="25.3" cy="43.1" r="1.9"/><circle cx="38.0" cy="43.1" r="1.9"/><circle cx="50.7" cy="43.1" r="1.9"/><circle cx="63.3" cy="43.1" r="1.9"/><circle cx="6.3" cy="48.5" r="1.9"/><circle cx="19.0" cy="48.5" r="1.9"/><circle cx="31.7" cy="48.5" r="1.9"/><circle cx="44.3" cy="48.5" r="1.9"/><circle cx="57.0" cy="48.5" r="1.9"/><circle cx="69.7" cy="48.5" r="1.9"/></g></svg>
+                  <span>EN</span>
+                </button>
+              </div>
         </header>
 
         <section class="about-text">
@@ -691,25 +720,6 @@
           </p>
         </section>
 
-        <!-- Highlights: key results, shown first -->
-        <ul class="highlights">
-          <li class="highlight">
-            <span class="highlight-value">92nd / 3,096</span>
-            <span class="highlight-label">Concours National Commun (Morocco), 2026</span>
-          </li>
-          <li class="highlight">
-            <span class="highlight-value">Winner</span>
-            <span class="highlight-label">iMSA Challenge, IA for Impact Hackathon 2026</span>
-          </li>
-          <li class="highlight">
-            <span class="highlight-value">5 books</span>
-            <span class="highlight-label">Free CPGE revision books, written in LaTeX</span>
-          </li>
-          <li class="highlight">
-            <span class="highlight-value">18.25 / 20</span>
-            <span class="highlight-label">Baccalauréat, "Très Bien" distinction</span>
-          </li>
-        </ul>
 
 
         <!--
@@ -1124,7 +1134,7 @@
 
                 <h3 class="project-title">Le Collé: series of 5 revision books</h3>
 
-                <p class="project-category">Education</p>
+                <p class="project-category" data-fr="Pédagogie">Education</p>
 
               </a>
             </li>
@@ -1582,33 +1592,15 @@
 
             <li class="info-card">
               <span class="card-kicker">Sport</span>
-              <h4>Football</h4>
+              <h4>Football &amp; Basketball</h4>
               <dl>
                 <dt>How often</dt>
-                <dd>Every week, with friends</dd>
+                <dd>Football every week with friends, basketball from time to time</dd>
                 <dt>What it brings me</dt>
                 <dd>
                   Fun, and a good way to do sport while enjoying myself and getting together with friends, in a
                   place full of joy, away from the stress of the world.
                 </dd>
-              </dl>
-            </li>
-
-            <li class="info-card">
-              <span class="card-kicker">Sport</span>
-              <h4>Swimming</h4>
-              <dl>
-                <dt>How often</dt>
-                <dd>The sport I chose for my first semester</dd>
-              </dl>
-            </li>
-
-            <li class="info-card">
-              <span class="card-kicker">Sport</span>
-              <h4>Basketball</h4>
-              <dl>
-                <dt>How often</dt>
-                <dd>From time to time</dd>
               </dl>
             </li>
 
@@ -1631,15 +1623,6 @@
                   I like working on my books and on small projects that leave a trace of me out there and can help
                   others.
                 </dd>
-              </dl>
-            </li>
-
-            <li class="info-card">
-              <span class="card-kicker">Hobby</span>
-              <h4>Baking</h4>
-              <dl>
-                <dt>About it</dt>
-                <dd>I enjoy baking in my free time.</dd>
               </dl>
             </li>
 
@@ -1670,12 +1653,10 @@
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
       link.addEventListener('click', function () {
         var address = link.getAttribute('href').replace('mailto:', '').split('?')[0];
-        var label = link.querySelector('span') || link;
-        var original = label.textContent;
 
         function confirmCopy() {
-          label.textContent = 'Address copied';
-          setTimeout(function () { label.textContent = original; }, 1800);
+          link.classList.add('copied');
+          setTimeout(function () { link.classList.remove('copied'); }, 1800);
         }
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1784,12 +1765,15 @@
         if (!res.ok) {
           link.classList.add('is-pending');
           link.setAttribute('aria-disabled', 'true');
-          var label = link.querySelector('span');
-          if (label) label.textContent += ' · coming soon';
         }
       }).catch(function () { });
     });
   </script>
+
+  <!--
+    - French / English switch: all French texts are in assets/js/i18n.js
+  -->
+  <script src="./assets/js/i18n.js"></script>
 
   <!--
     - ionicon link
