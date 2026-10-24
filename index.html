@@ -231,6 +231,10 @@
 
     .card-grid--wide { grid-template-columns: 1fr; }
 
+    /* mobility: always 2 columns on wide screens, 1 on phones */
+    .card-grid--pair { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 640px) { .card-grid--pair { grid-template-columns: 1fr; } }
+
     .info-card {
       position: relative;
       background: var(--border-gradient-onyx);
@@ -338,6 +342,7 @@
       .service-list { grid-template-columns: repeat(3, 1fr) !important; }
       .service-item { flex-direction: column; align-items: flex-start; }
     }
+
 
     /* project gallery: every image the same landscape shape */
     .project-img { height: auto !important; aspect-ratio: 16 / 10; }
@@ -982,6 +987,47 @@
 
             </li>
 
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Drone Attitude Lab: Interactive Control Simulator</h4>
+
+              <span>October 2026 · Web app · Control theory</span>
+
+              <p class="timeline-text">
+                A web simulator of a drone holding its roll angle, built from my TIPE. You tune a PID or cascade
+                controller, add wind, gusts, sensor noise or a sensor dropout, and compare the result with the Bode plot,
+                margins and poles computed live. It rebuilds the four architectures and the S1 to S4 scenarios of my TIPE,
+                works in English and French, and is checked by 20 automated tests.
+              </p>
+
+              <p class="timeline-text doc-links">
+                <a href="https://amine-ouqlani.github.io/drone-attitude-sim/" data-href-fr="https://amine-ouqlani.github.io/drone-attitude-sim/?lang=fr" target="_blank" rel="noopener noreferrer">Open the simulator</a> ·
+                <a href="https://github.com/amine-ouqlani/drone-attitude-sim" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">DC-DC Converter Lab: Buck and Boost Simulator</h4>
+
+              <span>October 2026 · Web app · Power electronics</span>
+
+              <p class="timeline-text">
+                A web simulator of the buck and boost converters, the basic circuits of static power conversion. You watch
+                them switch period by period on an oscilloscope view, push them into discontinuous conduction, follow the
+                losses and the efficiency, and close a voltage loop whose gain is tuned automatically from the circuit.
+                Every measurement is compared with the textbook formula, and 20 automated tests check the simulation
+                against the theory.
+              </p>
+
+              <p class="timeline-text doc-links">
+                <a href="https://amine-ouqlani.github.io/dc-dc-converter-lab/" data-href-fr="https://amine-ouqlani.github.io/dc-dc-converter-lab/?lang=fr" target="_blank" rel="noopener noreferrer">Open the simulator</a> ·
+                <a href="https://github.com/amine-ouqlani/dc-dc-converter-lab" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+              </p>
+
+            </li>
+
             <li class="timeline-item" id="le-colle">
 
               <h4 class="h4 timeline-item-title">Le Collé: CPGE Revision Books</h4>
@@ -999,19 +1045,6 @@
                 <a href="./assets/docs/le-colle-mathspe.pdf" target="_blank" rel="noopener noreferrer">Mathspé</a> ·
                 <a href="./assets/docs/le-colle-info.pdf" target="_blank" rel="noopener noreferrer">Info</a> ·
                 <a href="./assets/docs/le-colle-maths-resume.pdf" target="_blank" rel="noopener noreferrer">Maths – Résumé</a>
-              </p>
-
-            </li>
-
-            <!-- ENSEEIHT course project: copy this <li>, fill it in, and delete class="placeholder" -->
-            <li class="timeline-item placeholder">
-
-              <h4 class="h4 timeline-item-title">ENSEEIHT course project <span class="todo-tag">To complete</span></h4>
-
-              <span>2026 — 2027 · Course name</span>
-
-              <p class="timeline-text">
-                Project done in an ENSEEIHT 3EA course: goal, what you built or measured, tools used, and the result.
               </p>
 
             </li>
@@ -1115,6 +1148,42 @@
                 <h3 class="project-title">TIPE: Drone Attitude Stabilization</h3>
 
                 <p class="project-category">Control &amp; embedded systems</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="control &amp; embedded systems">
+              <a href="https://amine-ouqlani.github.io/drone-attitude-sim/" data-href-fr="https://amine-ouqlani.github.io/drone-attitude-sim/?lang=fr" target="_blank" rel="noopener noreferrer">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-drone-lab.jpg" alt="Drone Attitude Lab: a drone tilting in the wind under its bank scale, with its target angle shown as a dashed line" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Drone Attitude Lab (simulator)</h3>
+
+                <p class="project-category">Control &amp; embedded systems</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="power electronics">
+              <a href="https://amine-ouqlani.github.io/dc-dc-converter-lab/" data-href-fr="https://amine-ouqlani.github.io/dc-dc-converter-lab/?lang=fr" target="_blank" rel="noopener noreferrer">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-dcdc-lab.jpg" alt="DC-DC Converter Lab: oscilloscope view of a buck converter in discontinuous conduction" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DC-DC Converter Lab (simulator)</h3>
+
+                <p class="project-category">Power electronics</p>
 
               </a>
             </li>
@@ -1235,19 +1304,22 @@
 
             </li>
 
-            <!-- Copy this <li> for each other engagement (association, volunteering, student club, tutoring...),
-                 fill it in, and delete class="placeholder" -->
-            <li class="timeline-item placeholder">
+            <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Organization / association <span class="todo-tag">To complete</span></h4>
+              <h4 class="h4 timeline-item-title">Clean Walk in Toulouse</h4>
 
-              <span>Dates · Your role</span>
+              <span>4 September 2026 · ENSEEIHT integration week</span>
 
               <p class="timeline-text">
-                What the organization does, what you did there, and what it taught you.
+                During my first week at ENSEEIHT, as part of the integration week, I took part in a Clean Walk: for three
+                hours we walked around Toulouse collecting litter. It was also a way to meet the other new students and get
+                to know each other.
               </p>
 
             </li>
+
+            <!-- To add another engagement (association, volunteering, student club, tutoring...),
+                 copy one of the <li class="timeline-item"> blocks above and change its texts. -->
 
           </ol>
 
@@ -1262,8 +1334,7 @@
       <!--
         ======================================================
         - TAB 4 — #MOBILITY
-          3 potential international mobility projects, each aligned with one of
-          the 3 role models in the Careers tab.
+          My 4 preferred Erasmus+ exchange destinations, and why.
         ======================================================
       -->
 
@@ -1277,51 +1348,57 @@
 
           <h3 class="section-heading">My international mobility projects</h3>
 
-          <ul class="card-grid">
+          <ul class="card-grid card-grid--pair">
 
-            <!-- Fill in each card, then delete class="placeholder" and the "To complete" tag -->
-            <li class="info-card placeholder">
-              <span class="card-kicker">Project 1 · linked to role model 1</span>
-              <h4>Destination: city, country <span class="todo-tag">To complete</span></h4>
+            <li class="info-card">
+              <span class="card-kicker">Choice 1</span>
+              <h4>Munich, Germany</h4>
               <dl>
                 <dt>Host</dt>
-                <dd>University, lab or company</dd>
-                <dt>Type</dt>
-                <dd>Exchange semester, double degree, internship or gap year</dd>
-                <dt>When</dt>
-                <dd>Year of study / period</dd>
-                <dt>Why it fits</dt>
-                <dd>How it matches role model 1's path and my career goal</dd>
+                <dd>Technical University of Munich (TUM)</dd>
+                <dt>Field</dt>
+                <dd>Electricity &amp; energy</dd>
+                <dt>Why I want it</dt>
+                <dd>TUM is ranked 22nd in the world (QS 2026) and is one of Germany's leading technical universities. Its electrical engineering school is strong in power electronics, electrical drives and automatic control, the fields of my drone TIPE and my DC-DC converter project. The Munich area is home to Siemens, BMW, Infineon and Airbus Defence and Space, so I would be studying at the heart of the industries I want to work in.</dd>
               </dl>
             </li>
 
-            <li class="info-card placeholder">
-              <span class="card-kicker">Project 2 · linked to role model 2</span>
-              <h4>Destination: city, country <span class="todo-tag">To complete</span></h4>
+            <li class="info-card">
+              <span class="card-kicker">Choice 2</span>
+              <h4>Aachen, Germany</h4>
               <dl>
                 <dt>Host</dt>
-                <dd>University, lab or company</dd>
-                <dt>Type</dt>
-                <dd>Exchange semester, double degree, internship or gap year</dd>
-                <dt>When</dt>
-                <dd>Year of study / period</dd>
-                <dt>Why it fits</dt>
-                <dd>How it matches role model 2's path and my career goal</dd>
+                <dd>RWTH Aachen University</dd>
+                <dt>Field</dt>
+                <dd>Electronics &amp; automation</dd>
+                <dt>Why I want it</dt>
+                <dd>RWTH is one of Germany's largest technical universities and a member of the TU9 alliance. Its Institute for Power Electronics and Electrical Drives (ISEA) and its E.ON Energy Research Center make it a reference for power electronics and energy systems, exactly what my DC-DC converter lab is about. Its engineering teaching is known for close ties with industry and a lot of hands-on lab work.</dd>
               </dl>
             </li>
 
-            <li class="info-card placeholder">
-              <span class="card-kicker">Project 3 · linked to role model 3</span>
-              <h4>Destination: city, country <span class="todo-tag">To complete</span></h4>
+            <li class="info-card">
+              <span class="card-kicker">Choice 3</span>
+              <h4>Leuven, Belgium</h4>
               <dl>
                 <dt>Host</dt>
-                <dd>University, lab or company</dd>
-                <dt>Type</dt>
-                <dd>Exchange semester, double degree, internship or gap year</dd>
-                <dt>When</dt>
-                <dd>Year of study / period</dd>
-                <dt>Why it fits</dt>
-                <dd>How it matches role model 3's path and my career goal</dd>
+                <dd>KU Leuven, Faculty of Engineering Technology</dd>
+                <dt>Field</dt>
+                <dd>Engineering technology</dd>
+                <dt>Why I want it</dt>
+                <dd>KU Leuven is Belgium's top-ranked university (60th in the world, QS 2026). Its Faculty of Engineering Technology trains applied engineers in electromechanics, electronics and energy through projects and lab work. Leuven is also home to imec, a world-leading research centre in nanoelectronics and chip design, which matches my interest in embedded electronics.</dd>
+              </dl>
+            </li>
+
+            <li class="info-card">
+              <span class="card-kicker">Choice 4</span>
+              <h4>Warsaw, Poland</h4>
+              <dl>
+                <dt>Host</dt>
+                <dd>Warsaw University of Technology</dd>
+                <dt>Field</dt>
+                <dd>Electronics &amp; automation, electricity &amp; energy</dd>
+                <dt>Why I want it</dt>
+                <dd>One of the largest and oldest technical universities in Poland. Its agreement with ENSEEIHT covers both electronics &amp; automation and electricity &amp; energy, so I could combine control, electronics and power courses in one exchange. It also has very active student clubs in robotics and space engineering, where I could keep building projects like my drone lab.</dd>
               </dl>
             </li>
 

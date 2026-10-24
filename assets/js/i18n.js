@@ -94,11 +94,7 @@ const FR = {
   "Author of five revision books for CPGE students (chemistry, first- and second-year mathematics, computer science, and a mathematics summary), written in LaTeX and available online.":
     "Auteur de cinq livres de révision pour les élèves de CPGE (chimie, mathématiques de première et deuxième année, informatique, et un résumé de mathématiques), rédigés en LaTeX et disponibles en ligne.",
   "Read the books (PDF):": "Lire les livres (PDF) :",
-  "ENSEEIHT course project": "Projet de cours ENSEEIHT",
   "To complete": "À compléter",
-  "2026 — 2027 · Course name": "2026 — 2027 · Nom du cours",
-  "Project done in an ENSEEIHT 3EA course: goal, what you built or measured, tools used, and the result.":
-    "Projet réalisé dans un cours 3EA de l'ENSEEIHT : objectif, ce qui a été construit ou mesuré, outils utilisés et résultat.",
   "Project Gallery": "Galerie de projets",
   "Programming": "Programmation",
   "Control & embedded systems": "Automatique & systèmes embarqués",
@@ -108,6 +104,23 @@ const FR = {
   "LaTeX and technical documentation": "LaTeX et documentation technique",
   "Git and GitHub (basics)": "Git et GitHub (bases)",
   "Arduino and sensors": "Arduino et capteurs",
+  "Drone Attitude Lab: Interactive Control Simulator": "Labo d'attitude du drone : simulateur interactif de commande",
+  "October 2026 · Web app · Control theory": "Octobre 2026 · Application web · Automatique",
+  "A web simulator of a drone holding its roll angle, built from my TIPE. You tune a PID or cascade controller, add wind, gusts, sensor noise or a sensor dropout, and compare the result with the Bode plot, margins and poles computed live. It rebuilds the four architectures and the S1 to S4 scenarios of my TIPE, works in English and French, and is checked by 20 automated tests.":
+    "Un simulateur web d'un drone qui maintient son angle de roulis, issu de mon TIPE. On règle un correcteur PID ou en cascade, on ajoute du vent, des rafales, du bruit ou la perte d'un capteur, et on compare le résultat au diagramme de Bode, aux marges et aux pôles calculés en direct. Il reconstruit les quatre architectures et les scénarios S1 à S4 de mon TIPE, fonctionne en français et en anglais, et est vérifié par 20 tests automatiques.",
+  "Open the simulator": "Ouvrir le simulateur",
+  "Source on GitHub": "Code source sur GitHub",
+  "Drone Attitude Lab (simulator)": "Labo d'attitude du drone (simulateur)",
+  "DC-DC Converter Lab: Buck and Boost Simulator": "Labo des convertisseurs DC-DC : simulateur de hacheurs buck et boost",
+  "October 2026 · Web app · Power electronics": "Octobre 2026 · Application web · Électronique de puissance",
+  "A web simulator of the buck and boost converters, the basic circuits of static power conversion. You watch them switch period by period on an oscilloscope view, push them into discontinuous conduction, follow the losses and the efficiency, and close a voltage loop whose gain is tuned automatically from the circuit. Every measurement is compared with the textbook formula, and 20 automated tests check the simulation against the theory.":
+    "Un simulateur web des hacheurs série (buck) et parallèle (boost), les circuits de base de la conversion statique. On les regarde commuter période après période sur une vue d'oscilloscope, on les fait passer en conduction discontinue, on suit les pertes et le rendement, et on ferme une boucle de tension dont le gain est réglé automatiquement à partir du circuit. Chaque mesure est comparée à la formule du cours, et 20 tests automatiques vérifient la simulation par rapport à la théorie.",
+  "DC-DC Converter Lab (simulator)": "Labo des convertisseurs DC-DC (simulateur)",
+  "Power electronics": "Électronique de puissance",
+  "DC-DC Converter Lab: oscilloscope view of a buck converter in discontinuous conduction":
+    "Labo des convertisseurs DC-DC : vue d'oscilloscope d'un hacheur buck en conduction discontinue",
+  "Drone Attitude Lab: a drone tilting in the wind under its bank scale, with its target angle shown as a dashed line":
+    "Labo d'attitude du drone : un drone incliné par le vent sous son échelle d'inclinaison, avec sa consigne en pointillés",
 
   /* ---------- CIVIC ENGAGEMENT ---------- */
   "Engagements": "Engagements",
@@ -116,26 +129,43 @@ const FR = {
   "I wrote five revision books for CPGE students (chemistry, first- and second-year mathematics, computer science, and a mathematics summary) and share them for free on GitHub, so that any student can use them to prepare for the competitive exams, whatever their means.":
     "J'ai écrit cinq livres de révision pour les élèves de CPGE (chimie, mathématiques de première et deuxième année, informatique, et un résumé de mathématiques) et je les partage gratuitement sur GitHub, pour que tout élève puisse s'en servir pour préparer les concours, quels que soient ses moyens.",
   "Organization / association": "Organisation / association",
+  "Clean Walk in Toulouse": "Clean Walk à Toulouse",
+  "4 September 2026 · ENSEEIHT integration week": "4 septembre 2026 · Semaine d'intégration de l'ENSEEIHT",
+  "During my first week at ENSEEIHT, as part of the integration week, I took part in a Clean Walk: for three hours we walked around Toulouse collecting litter. It was also a way to meet the other new students and get to know each other.":
+    "Pendant ma première semaine à l'ENSEEIHT, dans le cadre de la semaine d'intégration, j'ai participé à une Clean Walk : pendant trois heures, nous avons parcouru Toulouse pour ramasser les déchets. C'était aussi l'occasion de rencontrer les autres nouveaux étudiants et de faire connaissance.",
   "Dates · Your role": "Dates · Votre rôle",
   "What the organization does, what you did there, and what it taught you.":
     "Ce que fait l'organisation, ce que vous y avez fait, et ce que cela vous a appris.",
 
   /* ---------- MOBILITY ---------- */
   "My international mobility projects": "Mes projets de mobilité internationale",
-  "Project 1 · linked to role model 1": "Projet 1 · lié au modèle 1",
-  "Project 2 · linked to role model 2": "Projet 2 · lié au modèle 2",
-  "Project 3 · linked to role model 3": "Projet 3 · lié au modèle 3",
-  "Destination: city, country": "Destination : ville, pays",
+  "Choice 1": "Choix 1",
+  "Choice 2": "Choix 2",
+  "Choice 3": "Choix 3",
+  "Choice 4": "Choix 4",
+  "Munich, Germany": "Munich, Allemagne",
+  "Aachen, Germany": "Aix-la-Chapelle, Allemagne",
+  "Leuven, Belgium": "Louvain, Belgique",
+  "Warsaw, Poland": "Varsovie, Pologne",
   "Host": "Établissement d'accueil",
-  "University, lab or company": "Université, laboratoire ou entreprise",
-  "Type": "Type",
-  "Exchange semester, double degree, internship or gap year": "Semestre d'échange, double diplôme, stage ou année de césure",
-  "When": "Quand",
-  "Year of study / period": "Année d'études / période",
-  "Why it fits": "Pourquoi ce choix",
-  "How it matches role model 1's path and my career goal": "En quoi il rejoint le parcours du modèle 1 et mon projet professionnel",
-  "How it matches role model 2's path and my career goal": "En quoi il rejoint le parcours du modèle 2 et mon projet professionnel",
-  "How it matches role model 3's path and my career goal": "En quoi il rejoint le parcours du modèle 3 et mon projet professionnel",
+  "Field": "Domaine",
+  "Why I want it": "Pourquoi je le veux",
+  "Technical University of Munich (TUM)": "Université technique de Munich (TUM)",
+  "RWTH Aachen University": "Université RWTH d'Aix-la-Chapelle",
+  "KU Leuven, Faculty of Engineering Technology": "KU Leuven, faculté de technologie de l'ingénieur",
+  "Warsaw University of Technology": "École polytechnique de Varsovie",
+  "Electricity & energy": "Électricité & énergie",
+  "Electronics & automation": "Électronique & automatique",
+  "Engineering technology": "Technologie de l'ingénieur",
+  "Electronics & automation, electricity & energy": "Électronique & automatique, électricité & énergie",
+  "TUM is ranked 22nd in the world (QS 2026) and is one of Germany's leading technical universities. Its electrical engineering school is strong in power electronics, electrical drives and automatic control, the fields of my drone TIPE and my DC-DC converter project. The Munich area is home to Siemens, BMW, Infineon and Airbus Defence and Space, so I would be studying at the heart of the industries I want to work in.":
+    "La TUM est classée 22e mondiale (QS 2026) et compte parmi les meilleures universités techniques d'Allemagne. Son école de génie électrique est reconnue en électronique de puissance, en entraînements électriques et en automatique, les domaines de mon TIPE sur le drone et de mon projet de convertisseurs DC-DC. La région de Munich accueille Siemens, BMW, Infineon et Airbus Defence and Space : j'étudierais au cœur des industries dans lesquelles je veux travailler.",
+  "RWTH is one of Germany's largest technical universities and a member of the TU9 alliance. Its Institute for Power Electronics and Electrical Drives (ISEA) and its E.ON Energy Research Center make it a reference for power electronics and energy systems, exactly what my DC-DC converter lab is about. Its engineering teaching is known for close ties with industry and a lot of hands-on lab work.":
+    "La RWTH est l'une des plus grandes universités techniques d'Allemagne et membre de l'alliance TU9. Son institut d'électronique de puissance et d'entraînements électriques (ISEA) et son centre de recherche E.ON Energy Research Center en font une référence en électronique de puissance et en systèmes énergétiques, exactement le sujet de mon labo de convertisseurs DC-DC. Son enseignement est réputé pour ses liens étroits avec l'industrie et la place des travaux pratiques.",
+  "KU Leuven is Belgium's top-ranked university (60th in the world, QS 2026). Its Faculty of Engineering Technology trains applied engineers in electromechanics, electronics and energy through projects and lab work. Leuven is also home to imec, a world-leading research centre in nanoelectronics and chip design, which matches my interest in embedded electronics.":
+    "La KU Leuven est l'université la mieux classée de Belgique (60e mondiale, QS 2026). Sa faculté de technologie de l'ingénieur forme des ingénieurs de terrain en électromécanique, électronique et énergie, par projets et en laboratoire. Louvain accueille aussi l'imec, centre de recherche de premier plan mondial en nanoélectronique et conception de puces, ce qui rejoint mon intérêt pour l'électronique embarquée.",
+  "One of the largest and oldest technical universities in Poland. Its agreement with ENSEEIHT covers both electronics & automation and electricity & energy, so I could combine control, electronics and power courses in one exchange. It also has very active student clubs in robotics and space engineering, where I could keep building projects like my drone lab.":
+    "L'une des plus grandes et des plus anciennes universités techniques de Pologne. Son accord avec l'ENSEEIHT couvre à la fois l'électronique & automatique et l'électricité & énergie : je pourrais combiner des cours d'automatique, d'électronique et d'énergie dans un même échange. Elle compte aussi des clubs étudiants très actifs en robotique et en ingénierie spatiale, où je pourrais continuer à construire des projets comme mon labo de drone.",
   "Languages": "Langues",
   "French": "Français",
   "Fluent (DALF C1)": "Courant (DALF C1)",
@@ -298,6 +328,12 @@ const FR = {
       const english = originalText.get(node);
       const french = translateString(english);
       node.nodeValue = (fr && french !== null) ? withSameSpacing(english, french) : english;
+    });
+
+    // links with a French address: data-href-fr="..."
+    document.querySelectorAll('[data-href-fr]').forEach(function (a) {
+      if (!a.hasAttribute('data-href-en')) a.setAttribute('data-href-en', a.getAttribute('href'));
+      a.setAttribute('href', fr ? a.getAttribute('data-href-fr') : a.getAttribute('data-href-en'));
     });
 
     // image descriptions, button labels
