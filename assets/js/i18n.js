@@ -54,7 +54,7 @@ const FR = {
     "J'écris des livres de révision faciles à comprendre, principalement pour les élèves de CPGE.",
   "Control & Embedded Systems": "Automatique & systèmes embarqués",
   "Automatic control and embedded electronics, from my 3EA track and my TIPE (a research project done in preparatory classes) on drone attitude stabilization with Arduino and sensors.":
-    "Automatique et électronique embarquée, à travers ma filière 3EA et mon TIPE (travaux d'initiative personnelle encadrés, réalisé en classes préparatoires) sur la stabilisation de l'attitude d'un drone avec Arduino et des capteurs.",
+    "Automatique et électronique embarquée, à travers ma filière 3EA et mon TIPE (travaux d'initiative personnelle encadrés, en classes préparatoires) sur la stabilisation de l'attitude d'un drone avec Arduino et des capteurs.",
   "Education": "Formation",
   "2026 — Present": "2026 — Aujourd'hui",
   "First-year engineering student, specializing in Electronics, Electrical Energy and Automatic Control (3EA).":

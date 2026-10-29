@@ -27,6 +27,10 @@
   function updateButtons() {
     const lang = root.getAttribute('lang') === 'fr' ? 'fr' : 'en';
     const text = current() === 'light' ? LABELS[lang].toDark : LABELS[lang].toLight;
+    // label read by screen readers for the group of flag + theme buttons
+    document.querySelectorAll('.lang-switch').forEach(function (group) {
+      group.setAttribute('aria-label', lang === 'fr' ? "Langue et mode d'affichage" : 'Language and display mode');
+    });
     document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
       btn.setAttribute('title', text);
       btn.setAttribute('aria-label', text);
