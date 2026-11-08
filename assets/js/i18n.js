@@ -99,6 +99,16 @@ const FR = {
   "Programming": "Programmation",
   "Control & embedded systems": "Automatique & systèmes embarqués",
   "Le Collé: Series of 5 Revision Books": "Le Collé : série de 5 livres de révision",
+  "Le Collé: Online Learning Platform for CPGE Students": "Le Collé : plateforme pédagogique en ligne pour les élèves de CPGE",
+  "November 2026 · Personal project · Website, LaTeX": "Novembre 2026 · Projet personnel · Site web, LaTeX",
+  "A website I designed and built to bring together complete course resources for CPGE students, organized by chapter: course booklets, the presentations I use in tutoring sessions, printable revision sheets, exercise sheets with detailed solutions, selected problems and past competitive-exam questions. It currently covers five chapters of the second-year PT mathematics program.":
+    "Un site que j'ai conçu et réalisé pour réunir des ressources de cours complètes destinées aux élèves de CPGE, organisées par chapitre : livrets de cours, présentations utilisées en séance de soutien, fiches de révision imprimables, TD avec corrections détaillées, problèmes sélectionnés et questions d'annales de concours. Il couvre aujourd'hui cinq chapitres du programme de mathématiques de deuxième année PT.",
+  "Every document is written in LaTeX and generated from its source, and the complete booklets are assembled automatically from the chapter booklets, so the two always match. The site itself is a light static website that works on computer, tablet and phone.":
+    "Chaque document est rédigé en LaTeX et généré à partir de sa source, et les livrets complets sont assemblés automatiquement à partir des livrets de chaque chapitre, pour que les deux restent toujours identiques. Le site lui-même est un site statique léger, utilisable sur ordinateur, tablette et téléphone.",
+  "Visit the platform": "Visiter la plateforme",
+  "Le Collé Platform (Website)": "Plateforme Le Collé (site web)",
+  "Chapter page of the Le Collé platform, with links to the booklet, presentation, revision sheet, selected problems and exercise sheets":
+    "Page d'un chapitre de la plateforme Le Collé, avec les liens vers le livret, la présentation, la fiche, les problèmes sélectionnés et les TD",
   "Skills": "Compétences",
   "C programming": "Programmation en C",
   "LaTeX and technical documentation": "LaTeX et documentation technique",
@@ -129,6 +139,16 @@ const FR = {
   "I wrote five revision books for CPGE students (chemistry, first- and second-year mathematics, computer science, and a mathematics summary) and share them for free on GitHub, so that any student can use them to prepare for the competitive exams, whatever their means.":
     "J'ai écrit cinq livres de révision pour les élèves de CPGE (chimie, mathématiques de première et deuxième année, informatique, et un résumé de mathématiques) et je les partage gratuitement sur GitHub, pour que tout élève puisse s'en servir pour préparer les concours, quels que soient ses moyens.",
   "Organization / association": "Organisation / association",
+  "Tutoring CPGE Students": "Cours de soutien pour des élèves de CPGE",
+  "Ongoing · Tutor at Complétude": "En cours · Enseignant de soutien chez Complétude",
+  "Through Complétude, I give tutoring lessons to students in scientific preparatory classes (CPGE). I go back over the difficult notions of the course with them, explain each method step by step and check their understanding with well-chosen exercises, so that they gain confidence and keep progressing. It also teaches me to adapt my explanations to each student.":
+    "Avec Complétude, je donne des cours de soutien à des élèves de classes préparatoires scientifiques (CPGE). Je reprends avec eux les notions difficiles du cours, j'explique chaque méthode étape par étape et je vérifie leur compréhension avec des exercices bien choisis, pour qu'ils prennent confiance et continuent de progresser. Cela m'apprend aussi à adapter mes explications à chaque élève.",
+  "Food Bank Collection": "Collecte de la Banque Alimentaire",
+  "6 November 2026 · Volunteer · Banque Alimentaire de Toulouse · Saint-Orens-de-Gameville": "6 novembre 2026 · Bénévole · Banque Alimentaire de Toulouse · Saint-Orens-de-Gameville",
+  "I volunteered at a supermarket in Saint-Orens-de-Gameville for the Grande Collecte Nationale of the Banque Alimentaire de Toulouse et sa Région. At the store entrance, I asked shoppers for food donations, collected them after checkout and thanked the donors, then sorted the products by category into boxes and stacked them on pallets. The donations are redistributed to people in precarious situations.":
+    "J'ai été bénévole dans un supermarché de Saint-Orens-de-Gameville pour la Grande Collecte Nationale de la Banque Alimentaire de Toulouse et sa Région. À l'entrée du magasin, je sollicitais les dons des clients, je les récupérais après le passage en caisse en remerciant les donateurs, puis je triais les produits par famille en cartons et les rangeais sur palettes. Les dons sont redistribués aux personnes en situation de précarité.",
+  "Poster of the Banque Alimentaire de Toulouse et sa Région for the 2026 Grande Collecte Nationale":
+    "Affiche de la Banque Alimentaire de Toulouse et sa Région pour la Grande Collecte Nationale 2026",
   "Clean Walk in Toulouse": "Clean Walk à Toulouse",
   "4 September 2026 · ENSEEIHT integration week": "4 septembre 2026 · Semaine d'intégration de l'ENSEEIHT",
   "During my first week at ENSEEIHT, as part of the integration week, I took part in a Clean Walk: for three hours we walked around Toulouse collecting litter. It was also a way to meet the other new students and get to know each other.":
